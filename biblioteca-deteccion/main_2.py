@@ -36,25 +36,30 @@ while True:
         
         gen_count = w * h
 
-        cv2.putText(img, ('Red: ' + str(count_red)), (x, y + h - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
-        cv2.putText(img, ('Gray: ' + str(count_gray)), (x, y + h - 25), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
-        cv2.putText(img, ('General: ' + str(gen_count)), (x, y + h - 35), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
-        cv2.putText(img, ('Other color: ' + str(other_color)), (x, y + h - 45), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
-            
+        #cv2.putText(img, ('Red: ' + str(count_red)), (x, y + h - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
+        #cv2.putText(img, ('Gray: ' + str(count_gray)), (x, y + h - 25), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+        #cv2.putText(img, ('General: ' + str(gen_count)), (x, y + h - 35), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
+        #cv2.putText(img, ('Other color: ' + str(other_color)), (x, y + h - 45), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+          
         if count_red > 300:
             if count_red < 4200:
-                cv2.putText(img, 'OCUPADO', (x, y + h - w), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
+                cv2.putText(img, 'OCUPADO', (x, y + h - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+                cv2.putText(img, 'OCUPADO', (x, y + h - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
                 cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
+                
             else:
-                cv2.putText(img, 'VACIO', (x, y + h - w), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
+                cv2.putText(img, 'VACIO', (x, y + h - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                cv2.putText(img, 'VACIO', (x, y + h - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
                 cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
         
         else:
             if count_gray < 3000:
-                cv2.putText(img, 'OCUPADO', (x, y + h - w), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
-                cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
+                cv2.putText(img, 'OCUPADO', (x, y + h - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+                cv2.putText(img, 'OCUPADO', (x, y + h - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+                cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)                
             else:
-                cv2.putText(img, 'VACIO', (x, y + h - w), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
+                cv2.putText(img, 'VACIO', (x, y + h - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                cv2.putText(img, 'VACIO', (x, y + h - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
                 cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 
         
