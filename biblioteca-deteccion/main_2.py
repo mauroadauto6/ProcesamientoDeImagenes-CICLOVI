@@ -13,7 +13,10 @@ with open('biblioteca-pkl/biblioteca.pkl', 'rb') as file:
     asientos = pickle.load(file)
 
 video = cv2.VideoCapture('biblioteca-deteccion/biblioteca.mp4')
-
+"""
+link del video de 10 min (biblioteca-loop.mp4)
+https://drive.google.com/file/d/1F1cgYZ0mUucgfMxF4CeEIoCtDPEIZ2TE/view?usp=drive_link
+"""
 
 while True:
     check, img = video.read()
@@ -40,7 +43,6 @@ while True:
         #cv2.putText(img, ('Gray: ' + str(count_gray)), (x, y + h - 25), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
         #cv2.putText(img, ('General: ' + str(gen_count)), (x, y + h - 35), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
         #cv2.putText(img, ('Other color: ' + str(other_color)), (x, y + h - 45), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
-          
         if count_red > 300:
             if count_red < 4200:
                 cv2.putText(img, 'OCUPADO', (x, y + h - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
